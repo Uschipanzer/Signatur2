@@ -1,0 +1,181 @@
+html,body,div,span,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,abbr,address,cite,code,del,dfn,em,img,ins,kbd,q,samp,small,strong,sub,sup,var,b,i,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,figcaption,figure,footer,header,hgroup,menu,nav,section,summary,time,mark,audio,video{margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent}
+body{line-height:1}
+article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block}
+nav ul{list-style:none}
+blockquote,q{quotes:none}
+blockquote:before,blockquote:after,q:before,q:after{content:none}
+a{margin:0;padding:0;font-size:100%;vertical-align:baseline;background:transparent;text-decoration:none}
+mark{background-color:#ff9;color:#000;font-style:italic;font-weight:bold}
+del{text-decoration:line-through}
+abbr[title],dfn[title]{border-bottom:1px dotted;cursor:help}
+table{border-collapse:collapse;border-spacing:0}
+hr{display:block;height:1px;border:0;border-top:1px solid #ccc;margin:1em 0;padding:0}
+input,select{vertical-align:middle}
+li{list-style:none}
+
+
+html,body{ 
+	width:100%;
+	height:100%;
+	background:#111;
+}
+
+html{
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+body{
+  font:normal 75% Arial, Helvetica, sans-serif;
+}
+
+canvas{
+  display:block;
+}
+.container{
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.container p{
+  color: rgb(204, 204, 204);
+  text-align: center;    
+  font-family:'Open Sans', sans-serif;font-size:300%;font-weight:bold;padding:10px 5px;border-style:solid;
+  animation-name: fade;               
+  animation-duration: 5s;              
+  animation-iteration-count: infinite;
+}
+#particles-js{
+  width: 100%;
+  height: 100%;
+  background-color: #151515;
+  background-image: url('');
+  background-size: cover;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+}
+@keyframes fade {
+  0% {  
+    transform: translateY(0);
+    text-shadow: 
+        0 0 0 #0c2ffb, 
+        0 0 0 #2cfcfd, 
+        0 0 0 #fb203b, 
+        0 0 0 #fefc4b;
+}
+
+20% {  
+    transform: translateY(-1em);
+    text-shadow: 
+        0 0.125em 0 #0c2ffb, 
+        0 0.25em 0 #2cfcfd, 
+        0 -0.125em 0 #fb203b, 
+        0 -0.25em 0 #fefc4b;
+}
+
+40% {  
+    transform: translateY(0.5em);
+    text-shadow: 
+        0 -0.0625em 0 #0c2ffb, 
+        0 -0.125em 0 #2cfcfd, 
+        0 0.0625em 0 #fb203b, 
+        0 0.125em 0 #fefc4b;
+}
+
+60% {
+    transform: translateY(-0.25em);
+    text-shadow: 
+        0 0.03125em 0 #0c2ffb, 
+        0 0.0625em 0 #2cfcfd, 
+        0 -0.03125em 0 #fb203b, 
+        0 -0.0625em 0 #fefc4b;
+}
+
+80% {  
+    transform: translateY(0);
+    text-shadow: 
+        0 0 0 #0c2ffb, 
+        0 0 0 #2cfcfd, 
+        0 0 0 #fb203b, 
+        0 0 0 #fefc4b;
+}
+}
+
+@media (prefers-reduced-motion: reduce) {
+* {
+  animation: none !important;
+  transition: none !important;
+}
+}
+.btncontainer{
+  text-align: center;
+  position: absolute;
+  top: 80%;
+  left: 50%;
+}
+.glow-on-hover{
+  transform: translate(-50%, -50%);
+  text-align: center;    
+  font-family:'Open Sans', sans-serif;
+  font-size:150%;
+  font-weight:bold;
+}
+.glow-on-hover {
+  width: 220px;
+  height: 50px;
+  border: none;
+  outline: none;
+  color: #fff;
+  background: #111;
+  cursor: pointer;
+  position: relative;
+  z-index: 0;
+  border-radius: 10px;
+}
+
+.glow-on-hover:before {
+  content: '';
+  background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
+  position: absolute;
+  top: -2px;
+  left:-2px;
+  background-size: 400%;
+  z-index: -1;
+  filter: blur(5px);
+  width: calc(100% + 4px);
+  height: calc(100% + 4px);
+  animation: glowing 20s linear infinite;
+  opacity: 0;
+  transition: opacity .3s ease-in-out;
+  border-radius: 10px;
+}
+
+.glow-on-hover:active {
+  color: #000
+}
+
+.glow-on-hover:active:after {
+  background: transparent;
+}
+
+.glow-on-hover:hover:before {
+  opacity: 1;
+}
+
+.glow-on-hover:after {
+  z-index: -1;
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #111;
+  left: 0;
+  top: 0;
+  border-radius: 10px;
+}
+
+@keyframes glowing {
+  0% { background-position: 0 0; }
+  50% { background-position: 400% 0; }
+  100% { background-position: 0 0; }
+}
